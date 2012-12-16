@@ -1,0 +1,9 @@
+
+{
+  "name": "reddit",
+  "description": "reddit API wrapper",
+  "dependencies" : {
+    "request": "1.1.69",
+  },
+}
+
