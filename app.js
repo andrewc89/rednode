@@ -1,5 +1,6 @@
 
 
-var _reddit = require("./lib/reddit").reddit;
-var reddit = new _reddit();
+var rednode = require("./reddit").reddit;
+var reddit = new rednode();
+
 reddit.login("testjswrapper", "testjswrapper");

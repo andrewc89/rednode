@@ -9,7 +9,7 @@ var request = require("request");
 var reddit = function () {
 
   var self = this,
-      userAgent = "node.js api wrapper by /u/GrammarNazism",
+      userAgent = "node.js api wrapper - https://github.com/theyshookhands/rednode",
       debug = false,
       uh = "",
       cookie = "";
@@ -34,7 +34,6 @@ var reddit = function () {
 
 };
 
-
 reddit.prototype = {
 
   login: function (username, password) {
@@ -49,6 +48,10 @@ reddit.prototype = {
       this.uh = response["json"]["data"]["modhash"];
       this.cookie = response.json.data.cookie;
     });
+  },
+
+  setUserAgent: function (userAgent) {
+    this.userAgent = userAgent;
   }
 
 }
