@@ -59,8 +59,8 @@ reddit.prototype = {
 
     this.post("http://www.reddit.com/api/login", data, function (body) {
       var response = JSON.parse(body);
-      this.uh = response["json"]["data"]["modhash"];
-      this.cookie = response.json.data.cookie;
+      this.setModhash(response["json"]["data"]["modhash"]);
+      this.setCookie(response.json.data.cookie);
       console.log("rednode --> logged in as: " + username);
       callback();
     });
@@ -68,6 +68,14 @@ reddit.prototype = {
 
   setUserAgent: function (userAgent) {
     this.userAgent = userAgent;
+  },
+
+	setCookie: function (value) {
+    this.cookie = value;
+  },
+
+  setModhash: function (value) {
+    this.uh = value;
   },
 
   r: function (name, callback) {

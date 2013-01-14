@@ -12,9 +12,7 @@
 <pre>
   var rednode = require("./reddit").reddit;
   var reddit = new rednode();
-  
-  // set your personal user agent
-  reddit.setUserAgent("my-user-agent");
+  reddit.setUserAgent("<your user agent>");
   reddit.login("username", "password");
 </pre>
 
