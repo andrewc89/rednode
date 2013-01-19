@@ -1,20 +1,18 @@
 
 # rednode
 
-## Install
-
-<pre>
-  git clone git://github.com/theyshookhands/rednode.git
-</pre>
-
 ## Usage
 
-<pre>
-  var rednode = require("./reddit").reddit;
-  var reddit = new rednode();
+```javascript
+  var Reddit = require("./reddit");
+  var reddit = new Reddit();
   reddit.setUserAgent("<your user agent>");
-  reddit.login("username", "password");
-</pre>
+  reddit.login("username", "password", function () {
+		reddit.postLink("redditdev", "node.js reddit api wrapper", "https://github.com/theyshookhands/rednode", function (body) {
+			console.log(body);
+		});
+	});
+```
 
 ## Dependencies
 
