@@ -1,3 +1,4 @@
+
 var request = require("request");
 var Subreddit = require("./subreddit");
 
@@ -75,6 +76,14 @@ Reddit.prototype = {
     this.post(this.domain + "/api/submit", data, callback);
   },
 
+  comment: function (thing, text, callback) {
+    var data = {
+      "thing_id": thing,
+      "text": text
+    };
+    this.post(this.domain + "/api/comment", data, callback);
+  },
+
   r: function (subredditName, callback) {
     var subreddit = new Subreddit(subredditName);
     if (callback) {
@@ -86,10 +95,3 @@ Reddit.prototype = {
 };
 
 module.exports = Reddit;
-
-
-
-
-
-
-

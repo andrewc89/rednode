@@ -3,11 +3,12 @@
 var Reddit = require("./reddit");
 var reddit = new Reddit();
 
-reddit.login("GrammarNazism", "wazzup2", function () {
-  //reddit.postSelf("testjswrapper", "testing rednode", "blah blah blah", function (body) {
-    //console.log(body);
-  //});
-  reddit.r("testjswrapper", function (body) {
-    console.log(body);
-  }).top();
+reddit.login("testjswrapper", "testjswrapper", function () {
+
+  reddit.r("testjswrapper").top().exec(function (error, response, body) {
+
+    console.log("body: " + body);
+
+});
+
 });
