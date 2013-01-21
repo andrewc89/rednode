@@ -21,6 +21,7 @@
     console.log(body);
   });
 ```
+
 ```javscript
   reddit.r("redditdev").top().exec(function (body) {
     console.log(body);
