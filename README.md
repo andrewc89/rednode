@@ -17,12 +17,12 @@
 #### Subreddit
 
 ```javascript
-  reddit.r("redditdev", function (error, response, body) {
+  reddit.r("redditdev", function (body) {
     console.log(body);
   });
 ```
 ```javscript
-  reddit.r("redditdev").top().exec(function (error, response, body) {
+  reddit.r("redditdev").top().exec(function body) {
     console.log(body);
   });
 ```

@@ -24,8 +24,9 @@ Subreddit.prototype.exec = function (callback) {
     this.filter = filters[0];
   }
   var url = "http://reddit.com/r/" + this.subreddit + "/" + this.filter + ".json";
-  console.log(url);
-  request.get(url, callback);
+  request.get(url, function (error ,response, body) {
+    callback(body);
+  });
 }
 
 module.exports = Subreddit;
